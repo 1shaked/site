@@ -32,6 +32,21 @@ app.post('/addUser', (request, res) => {
   res.send({status:'user has been added ', data: data[user_data.email]});
 });
 
+app.post('/login', (request, res) => {
+    
+    const data_str = fs.readFileSync(path.join(__dirname, '/db/users.json')); // getting the file data as string
+    const data = JSON.parse(data_str); // parse it as JSON
+    console.log(request.body);
+    // check if the user already exists
+    const user_data = request.body; // {email , password }
+    if (!(user_data.email in data)) return res.send("user not exists"); // if exists send error message
+    if (data[user_data.email].password === user_data.password) {
+        res.send({isSuccess: true});
+    }
+    res.statusCode = 403;
+    res.send("ERROR WHILE LOGIN");
+  });
+  
 
 app.listen(port, () => {
   return console.log(`Express is listening at http://localhost:${port}`);

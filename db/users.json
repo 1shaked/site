@@ -22,5 +22,11 @@
     "firstName": "Shaked",
     "lastName": "chen",
     "id": 8
+  },
+  "shaked2hen@gmail.com": {
+    "password": "123456789",
+    "firstName": "Shaked",
+    "lastName": "chen",
+    "id": 9
   }
 }
