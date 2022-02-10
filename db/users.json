@@ -1,6 +1,8 @@
 {
     "mail": {
-        "Name":"shaked",
-        "LastName": "chen"
+        "FirstName": "John",
+        "LastName": "doe",
+        "ID": "123",
+        "Password": "password"
     }
 }
