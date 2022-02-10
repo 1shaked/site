@@ -1,8 +1,26 @@
 {
-    "mail": {
-        "FirstName": "John",
-        "LastName": "doe",
-        "ID": "123",
-        "Password": "password"
-    }
+  "mail": {
+    "FirstName": "John",
+    "LastName": "doe",
+    "ID": 0,
+    "Password": "password"
+  },
+  "bugs@a7.org": {
+    "password": "ssss",
+    "firstName": "Shaked",
+    "lastName": "chen",
+    "id": 6
+  },
+  "bug1s@a7.org": {
+    "password": "ssss",
+    "firstName": "Shaked",
+    "lastName": "chen",
+    "id": 7
+  },
+  "bug12s@a7.org1": {
+    "password": "ssss",
+    "firstName": "Shaked",
+    "lastName": "chen",
+    "id": 8
+  }
 }

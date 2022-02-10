@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+</head>
+<body>
+    <h1>Login page</h1>
+    <h2>This is Login</h2>
+    <form action="/addUser" method="post">
+        
+        <label for="email"> What is your email address?</label>  <input type="text" label="email" placeholder="your email address" id="email">
+        <br>
+
+        <label for="firstName"> What is your first name?</label>  <input type="text" label="firstName" placeholder="your first name" id="firstName">
+        <br>
+
+        <label for="lastName"> What is your last name?</label>  <input type="text" label="lastName" placeholder="your last name" id="lastName">
+        <br>
+
+        <label for="password"> What is your password?</label> <input type="password" label="password" placeholder="your password" id="password">
+        <br>
+        <button type="submit" class="btn btn-primary" id="submit"> send data</button>
+    </form>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.25.0/axios.min.js" integrity="sha512-/Q6t3CASm04EliI1QyIDAA/nDo9R8FQ/BULoUFyN4n/BDdyIxeH7u++Z+eobdmr11gG5D/6nPFyDlnisDwhpYA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script>
+        const submit = document.getElementById('submit');
+        console.log(submit);
+        submit.addEventListener('click', async (event) => {
+            event.preventDefault();
+            // get data from field
+            const email = document.getElementById('email').value;
+            const firstName = document.getElementById('firstName').value;
+            const lastName = document.getElementById('lastName').value;
+            const password = document.getElementById('password').value;
+            body = {
+                email,
+                firstName,
+                lastName,
+                password,
+            }
+            console.log('data is -> ', body);
+            const respond = await axios.post('/addUser', body);
+            console.log(respond);
+        })
+    </script>
+</body>
+</html>
